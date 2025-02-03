@@ -183,4 +183,136 @@ body.dark-mode {
 .dark-mode h1 {
     color: var(--primary-color);
     text-shadow: 0 0 20px rgba(255,118,118,0.2);
+}
+
+/* 番茄鐘說明卡片 */
+.info-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.pomodoro-steps {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    background-color: var(--primary-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.step i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    width: 2rem;
+    text-align: center;
+}
+
+.step p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* 時間設定樣式 */
+.time-settings {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.settings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.setting-item {
+    text-align: center;
+    background-color: var(--primary-light);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.dark-mode .setting-item {
+    background-color: var(--dark-card-bg);
+    border: 1px solid var(--dark-border);
+}
+
+.time-input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.time-input input {
+    width: 70px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.time-input button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* 深色模式樣式 */
+.dark-mode .step {
+    background-color: var(--dark-card-bg);
+}
+
+.dark-mode .time-settings {
+    background-color: var(--dark-card-bg);
+    border: 1px solid var(--dark-border);
+}
+
+.dark-mode .time-input input {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+.dark-mode .info-card {
+    background-color: var(--dark-card-bg);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dark-mode .btn-link {
+    color: var(--dark-text-secondary);
+}
+
+.dark-mode .btn-link:hover {
+    color: var(--dark-text);
+}
+
+@media (max-width: 768px) {
+    .row > div {
+        margin-bottom: 1.5rem;
+    }
+    
+    .time-settings,
+    .info-card {
+        height: auto !important;
+    }
 } 

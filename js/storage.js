@@ -54,5 +54,6 @@ function loadStatistics() {
 function updateStatisticsDisplay() {
     const todayStats = getStats()[getTodayKey()];
     $('#completed-count').text(todayStats.completedCount);
-    $('#focus-time').text(formatTime(todayStats.focusMinutes));
+    const formattedTime = formatTime(todayStats.focusMinutes);
+    $('#focus-time').text(formattedTime);
 } 

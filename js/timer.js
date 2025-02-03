@@ -1,9 +1,11 @@
 class Timer {
     constructor() {
-        this.minutes = 25;
+        this.minutes = parseInt($('#workTime').val());
         this.seconds = 0;
         this.isRunning = false;
         this.timerInterval = null;
+        this.pomodoroCount = 0;
+        this.isBreak = false;
     }
 
     start() {
@@ -25,7 +27,13 @@ class Timer {
     reset() {
         this.isRunning = false;
         clearInterval(this.timerInterval);
-        this.minutes = 25;
+        if (this.isBreak) {
+            this.minutes = this.pomodoroCount % 4 === 0 ? 
+                parseInt($('#longBreak').val()) : 
+                parseInt($('#shortBreak').val());
+        } else {
+            this.minutes = parseInt($('#workTime').val());
+        }
         this.seconds = 0;
         updateDisplay();
         updateStatus('準備開始');
@@ -48,7 +56,24 @@ class Timer {
     complete() {
         this.pause();
         playSound('complete');
-        updateStatus('時間到！');
+        this.pomodoroCount++;
+        
+        if (this.isBreak) {
+            this.isBreak = false;
+            this.minutes = parseInt($('#workTime').val());
+            updateStatus(translations[currentLang].readyToWork);
+        } else {
+            this.isBreak = true;
+            if (this.pomodoroCount % 4 === 0) {
+                this.minutes = parseInt($('#longBreak').val());
+                updateStatus(translations[currentLang].longBreak);
+            } else {
+                this.minutes = parseInt($('#shortBreak').val());
+                updateStatus(translations[currentLang].shortBreak);
+            }
+        }
+        
         incrementCompletedCount();
+        updateDisplay();
     }
 } 
