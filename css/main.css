@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #FF7676;
+    --primary-light: #FFE2E2;
+    --secondary-color: #4ECDC4;
+    --secondary-light: #E0F5F3;
+    --dark-gray: #2f2f2f;
+    --light-gray: #f8f9fa;
+    --accent-color: #FFB084;
+   
+   /* 深色模式變數 */
+   --dark-bg: #1E1E2E;
+   --dark-text: #FFFFFF;
+   --dark-card-bg: #2A2A3C;
+   --dark-border: #363649;
+   --dark-text-secondary: #B4B4C7;
+}
+
+body {
+    font-family: 'Microsoft JhengHei', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header .lead {
+    color: var(--dark-gray);
+    opacity: 0.8;
+}
+
+.timer-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.timer-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.btn {
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-warning {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: #FF9999;
+    border-color: #FF9999;
+}
+
+/* 深色模式樣式 */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .timer-container,
+.dark-mode .stat-card {
+    background-color: var(--dark-card-bg);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.dark-mode .timer-display {
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(255,118,118,0.2);
+}
+
+.dark-mode .timer-status {
+    color: var(--dark-text-secondary);
+}
+
+.dark-mode .stat-card h4 {
+    color: var(--dark-text-secondary);
+}
+
+.dark-mode .stat-card p {
+    color: var(--primary-color);
+}
+
+.dark-mode .settings {
+    background-color: var(--dark-card-bg);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.dark-mode .form-check {
+    color: var(--dark-text-secondary);
+}
+
+.dark-mode .form-check-input {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+}
+
+.dark-mode .form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 118, 118, 0.25);
+}
+
+.dark-mode .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 118, 118, 0.25);
+}
+
+.dark-mode .settings h3 {
+    color: var(--dark-text);
+    opacity: 0.9;
+}
+
+.dark-mode .form-check-label {
+    color: var(--dark-text-secondary);
+}
+
+.dark-mode .btn-outline-secondary {
+    color: var(--dark-text);
+    border-color: var(--dark-border);
+    background-color: transparent;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--dark-text);
+}
+
+.dark-mode .dropdown-menu {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.dark-mode .dropdown-item {
+    color: var(--dark-text-secondary);
+}
+
+.dark-mode .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--dark-text);
+}
+
+.dark-mode .lead {
+    color: var(--dark-text-secondary);
+}
+
+.dark-mode h1 {
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(255,118,118,0.2);
+} 

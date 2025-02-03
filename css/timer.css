@@ -1,0 +1,84 @@
+.timer-display {
+    font-size: 6.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(255,118,118,0.1);
+    margin-bottom: 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.timer-status {
+    font-size: 1.3rem;
+    color: var(--dark-gray);
+    margin: 1.5rem 0;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.timer-controls button {
+    margin: 0 5px;
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.timer-controls button:hover {
+    transform: translateY(-2px);
+}
+
+.stat-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.stat-card h4 {
+    color: var(--dark-gray);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.stat-card p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.settings {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.settings h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.form-check-label {
+    cursor: pointer;
+    user-select: none;
+} 

@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+    .timer-display {
+        font-size: 4rem;
+    }
+
+    .timer-controls button {
+        margin: 5px;
+        min-width: 80px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer-display {
+        font-size: 3rem;
+    }
+
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+} 
