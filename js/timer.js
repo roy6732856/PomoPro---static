@@ -12,7 +12,7 @@ class Timer {
         if (!this.isRunning) {
             this.isRunning = true;
             this.timerInterval = setInterval(() => this.tick(), 1000);
-            updateStatus('專注中...');
+            updateStatus(translations[currentLang].focusing);
         }
     }
 
@@ -20,7 +20,7 @@ class Timer {
         if (this.isRunning) {
             this.isRunning = false;
             clearInterval(this.timerInterval);
-            updateStatus('已暫停');
+            updateStatus(translations[currentLang].paused);
         }
     }
 
@@ -36,7 +36,7 @@ class Timer {
         }
         this.seconds = 0;
         updateDisplay();
-        updateStatus('準備開始');
+        updateStatus(translations[currentLang].ready);
     }
 
     tick() {
@@ -56,6 +56,11 @@ class Timer {
     complete() {
         this.pause();
         playSound('complete');
+        if (!this.isBreak) {
+            const workMinutes = parseInt($('#workTime').val());
+            totalFocusTime += workMinutes;
+            updateFocusTimeDisplay();
+        }
         this.pomodoroCount++;
         
         if (this.isBreak) {

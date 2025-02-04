@@ -1,4 +1,5 @@
 let timer;
+let totalFocusTime = 0;
 
 $(document).ready(() => {
     // 先載入時間設定
@@ -33,10 +34,10 @@ $(document).ready(() => {
 function updateDisplay() {
     $('#minutes').text(String(timer.minutes).padStart(2, '0'));
     $('#seconds').text(String(timer.seconds).padStart(2, '0'));
-    
-    // 更新 Focus Time 的顯示
-    const focusTimeText = `${String(timer.minutes).padStart(2, '0')}:${String(timer.seconds).padStart(2, '0')}`;
-    $('#focus-time').text(focusTimeText);
+}
+
+function updateFocusTimeDisplay() {
+    $('#focus-time').text(totalFocusTime + ' 分鐘');
 }
 
 function updateStatus(text) {
